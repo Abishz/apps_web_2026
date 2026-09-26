@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudiantil - Autenticación</title>
+</head>
+<body>
+
+    <!-- Encabezado principal del sitio -->
+    <header>
+        <img src="logo-institucion.png" alt="Logo de la Institución Educativa">
+        <h1>Portal Web Estudiantil</h1>
+        
+        <!-- Navegación con lista no ordenada -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ayuda">Ayuda y Soporte</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main>
+        <section>
+            <h2>Inicio de Sesión</h2>
+            <p>Ingresa tus credenciales institucionales para acceder a la plataforma.</p>
+
+            <!-- Formulario de autenticación -->
+            <form action="/login" method="POST">
+                <p>
+                    <label for="correo">Correo Institucional:</label><br>
+                    <input 
+                        type="email" 
+                        id="correo" 
+                        name="correo" 
+                        placeholder="estudiante@institucion.edu" 
+                        pattern="[a-zA-Z0-9._%+-]+@institucion\.edu"
+                        title="Ingresa un correo institucional válido (@institucion.edu)"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="password">Contraseña:</label><br>
+                    <input type="password" id="password" name="password" required>
+                </p>
+
+                <p>
+                    <button type="submit">Acceder al Portal</button>
+                </p>
+            </form>
+
+            <p>
+                <a href="#recuperar">¿Olvidaste tu contraseña?</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Portal Estudiantil. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

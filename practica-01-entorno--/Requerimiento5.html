@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudiantil - Autenticación</title>
+</head>
+<body>
+
+    <!-- Encabezado con logo y navegación principal -->
+    <header>
+        <img src="logo-institucional.png" alt="Logo oficial de la institución educativa">
+        <h1>Portal Web Estudiantil</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#instrucciones">Instrucciones de Acceso</a></li>
+                <li><a href="#soporte">Soporte Técnico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido central de la página -->
+    <main>
+
+        <!-- Sección del Formulario de Autenticación -->
+        <section id="inicio">
+            <h2>Iniciar Sesión con Correo Institucional</h2>
+            <p>Ingresa tu cuenta de correo asignada por la institución para validar tu acceso al portal.</p>
+
+            <form action="/login" method="POST">
+                <p>
+                    <label for="correo">Correo Institucional:</label><br>
+                    <input 
+                        type="email" 
+                        id="correo" 
+                        name="correo" 
+                        placeholder="estudiante@institucion.edu" 
+                        pattern="^[a-zA-Z0-9._%+-]+@institucion\.edu$"
+                        title="Debe ser un correo con dominio @institucion.edu"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="contrasena">Contraseña:</label><br>
+                    <input 
+                        type="password" 
+                        id="contrasena" 
+                        name="contrasena" 
+                        required
+                    >
+                </p>
+
+                <p>
+                    <button type="submit">Ingresar al Portal</button>
+                </p>
+            </form>
+        </section>
+
+        <!-- Sección informativa con lista de pasos -->
+        <section id="instrucciones">
+            <h3>Pasos para primer ingreso</h3>
+            <ol>
+                <li>Verifica que tu cuenta de correo institucional esté activa.</li>
+                <li>Introduce tu dirección completa finalizada en <code>@institucion.edu</code>.</li>
+                <li>Escribe tu contraseña provisional o la configurada en el registro inicial.</li>
+                <li>Haz clic en el botón <strong>Ingresar al Portal</strong>.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Universidad Institucional. Todos los derechos reservados.</p>
+        <p><a href="#soporte">¿Tienes problemas para acceder? Contacta a mesa de ayuda.</a></p>
+    </footer>
+
+</body>
+</html>
