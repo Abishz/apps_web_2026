@@ -4,64 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Estudiantil - Autenticación</title>
+    
+    <!-- Bootstrap 5 CSS (vía CDN como indica la documentación) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Tipografía Roboto (Google Fonts) según especificación -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados basados en tu Paleta de Colores y Tipografía -->
+    <style>
+        :root {
+            --azul-principal: #5B8DEF;
+            --morado-principal: #9B7FEA;
+            --azul-claro: #DCEEFF;
+            --lavanda: #EEE9FF;
+            --blanco: #FFFFFF;
+            --texto-principal: #30364D;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--texto-principal);
+            background-color: var(--azul-claro);
+            font-size: 14px; /* Cuerpo: 14sp */
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 28px; /* Título grande (H1): 28sp */
+            font-weight: 400;
+            color: var(--texto-principal);
+        }
+
+        h2 {
+            font-size: 22px; /* Título mediano (H2): 22sp */
+            font-weight: 500;
+            color: var(--texto-principal);
+        }
+
+        .subtitle {
+            font-size: 16px; /* Subtítulo: 16sp */
+            font-weight: 500;
+        }
+
+        /* Navegación */
+        .nav-link {
+            color: var(--texto-principal);
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--azul-principal);
+        }
+
+        /* Card de Login (Aplicando empatía y enfoque centrado en el usuario) */
+        .card-login {
+            background-color: var(--blanco);
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(48, 54, 77, 0.08);
+        }
+
+        /* Form Controls */
+        .form-control {
+            border-color: var(--morado-principal);
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            border-color: var(--azul-principal);
+            box-shadow: 0 0 0 0.25rem rgba(91, 141, 239, 0.25);
+        }
+
+        /* Botón de Acción Principal */
+        .btn-principal {
+            background-color: var(--azul-principal);
+            color: var(--blanco);
+            font-size: 14px; /* Botón: 14sp */
+            font-weight: 500; /* Peso: 500 */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .btn-principal:hover {
+            background-color: #4a7be0;
+            color: var(--blanco);
+        }
+
+        /* Enlaces secundarios */
+        .link-secundario {
+            color: var(--morado-principal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .link-secundario:hover {
+            color: #8566e3;
+            text-decoration: underline;
+        }
+
+        /* Banner de bienestar / ayuda (Lavanda) */
+        .banner-bienestar {
+            background-color: var(--lavanda);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--blanco);
+            font-size: 12px; /* Cuerpo pequeño: 12sp */
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Encabezado principal del sitio -->
-    <header>
-        <img src="logo-institucion.png" alt="Logo de la Institución Educativa">
-        <h1>Portal Web Estudiantil</h1>
-        
-        <!-- Navegación con lista no ordenada -->
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#ayuda">Ayuda y Soporte</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <header class="py-3 mb-4">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center mb-2 mb-md-0">
+                <img src="logo-institucion.png" alt="Logo de la Institución Educativa" class="me-3" style="max-height: 50px;">
+                <h1 class="m-0">Portal Web Estudiantil</h1>
+            </div>
+            
+            <!-- Navegación con lista no ordenada -->
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#inicio" class="nav-link px-2">Inicio</a></li>
+                    <li class="nav-item"><a href="#ayuda" class="nav-link px-2">Ayuda y Soporte</a></li>
+                    <li class="nav-item"><a href="#contacto" class="nav-link px-2">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Contenido principal de la página -->
-    <main>
-        <section>
-            <h2>Inicio de Sesión</h2>
-            <p>Ingresa tus credenciales institucionales para acceder a la plataforma.</p>
+    <main class="container my-auto py-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-5">
+                
+                <section class="card card-login p-4 p-md-5">
+                    <h2 class="text-center mb-2">Inicio de Sesión</h2>
+                    <p class="text-center mb-4 subtitle text-muted">Ingresa tus credenciales institucionales para acceder a la plataforma.</p>
 
-            <!-- Formulario de autenticación -->
-            <form action="/login" method="POST">
-                <p>
-                    <label for="correo">Correo Institucional:</label><br>
-                    <input 
-                        type="email" 
-                        id="correo" 
-                        name="correo" 
-                        placeholder="estudiante@institucion.edu" 
-                        pattern="[a-zA-Z0-9._%+-]+@institucion\.edu"
-                        title="Ingresa un correo institucional válido (@institucion.edu)"
-                        required
-                    >
-                </p>
+                    <!-- Formulario de autenticación -->
+                    <form action="/login" method="POST">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label fw-bold">Correo Institucional:</label>
+                            <input 
+                                type="email" 
+                                class="form-control"
+                                id="correo" 
+                                name="correo" 
+                                placeholder="estudiante@institucion.edu" 
+                                pattern="[a-zA-Z0-9._%+-]+@institucion\.edu"
+                                title="Ingresa un correo institucional válido (@institucion.edu)"
+                                required
+                            >
+                        </div>
 
-                <p>
-                    <label for="password">Contraseña:</label><br>
-                    <input type="password" id="password" name="password" required>
-                </p>
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-bold">Contraseña:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
 
-                <p>
-                    <button type="submit">Acceder al Portal</button>
-                </p>
-            </form>
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-principal">Acceder al Portal</button>
+                        </div>
+                    </form>
 
-            <p>
-                <a href="#recuperar">¿Olvidaste tu contraseña?</a>
-            </p>
-        </section>
+                    <div class="text-center mt-2">
+                        <a href="#recuperar" class="link-secundario">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Elemento centrado en el usuario (Design Thinking: Apoyo al estudiante) -->
+                    <div class="banner-bienestar mt-4 text-center">
+                        <p class="m-0">¿Tienes problemas para ingresar? Contacta con la mesa de ayuda estudiantil.</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
     </main>
 
     <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 Portal Estudiantil. Todos los derechos reservados.</p>
+    <footer class="py-3 text-center border-top">
+        <div class="container">
+            <p class="m-0">&copy; 2026 Portal Estudiantil. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
 </body>
